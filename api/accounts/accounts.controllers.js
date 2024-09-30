@@ -29,7 +29,7 @@ exports.accountDelete = async (req, res) => {
   try {
     const {accountId} = req.params;
     const deleteAccount = await accountsSchema.findByIdAndDelete(accountId);
-    return res.status(204).json({message: deleteAccount});
+    return res.status(204).json({message: "Account have been deleted."});
   } catch (error) {
     console.log(error)
     return res.status(404).json({error: error})
